@@ -16,7 +16,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  animation: glitch 600ms ease forwards;
+  animation: glitch 600ms ease infinite forwards;
 }
 
 .glitch span {
@@ -27,11 +27,11 @@ body {
 }
 .glitch span:first-child {
   clip-path: polygon(0% 60%, 100% 35%, 100% 100%, 0% 100%);
-  animation: glitch-layer-one 500ms ease forwards;
+  animation: glitch-layer-one 500ms ease infinite forwards;
 }
 .glitch span:last-child {
   clip-path: polygon(1% 0%, 100% 0%, 100% 40%, 0% 60%);
-  animation: glitch-layer-two 500ms ease forwards;
+  animation: glitch-layer-two 500ms ease infinite forwards;
 }
 @keyframes glitch-layer-one {
   0% {
@@ -68,9 +68,7 @@ body {
   10% {
     text-shadow: -3px 2px 2px red, 2px 0 2px green, 3px -1px 1px blue;
   }
-  /* 25% {
-    text-shadow: -1px 2px 2px red, -2px 0 2px green, 3px -1px 1px blue;
-  } */
+  
   50% {
     text-shadow: 2px 0 2px red, -2px -2px 2px green, 1px 0px 2px blue;
   }
@@ -79,32 +77,24 @@ body {
     text-shadow: -2px -1px 2px red, 0px -2px 2px green, -3px 2px 2px blue;
   }
   80% {
-    /* text-shadow: 0px -2px 2px red, 0px 3px 2px green, 0px 2px 2px blue; */
+   
   }
   100% {
     text-shadow: -1px 2px 2px red, -1px -3px 2px green, 3px 1px 1px blue;
   }
 
-  /* 10% {
-    text-shadow: -3px 2px 2px red, 2px 0 2px green, 3px -1px 1px blue;
-  }
-  25% {
-    text-shadow: 0 2px 2px red, -2px 0 2px green, 3px -1px 1px blue;
-  }
-
-  50% {
-    text-shadow: 2px 0 2px red, -2px 3px 2px green, 2px 3px 2px blue;
-  }
-  76% {
-    text-shadow: 3px 0 2px red, 0px 3px 2px green, -3px 0 2px blue;
-  }
-
-  80% {
-    text-shadow: 0px -2px 2px red, 0px 3px 2px green, 0px 2px 2px blue;
-  }
+}
 
 
-  100% {
-     text-shadow: -3px 2px 2px red, 2px 0 2px green, 3px -1px 1px blue;
-  }  */
+@media (prefers-reduced-motion:reduce){
+  *, ::before, ::after{
+    animation-delay: -1ms !important;
+    animation-duration: -1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+
 }
